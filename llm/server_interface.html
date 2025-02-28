@@ -338,7 +338,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#server-setup">Server Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#server-usage">Server Usage</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-webui-demo">Open WebUI Demo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-webui-demo">Open WebUI Demo</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions">Instructions:</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next Steps</a></li>
@@ -357,7 +360,7 @@ document.write(`
 <h1>Server Interface (REST API)<a class="headerlink" href="#server-interface-rest-api" title="Permalink to this heading">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">lemonade</span></code> SDK server interface allows your application to load an LLM on Ryzen AI hardware in a process, and then communicate with this process using standard <code class="docutils literal notranslate"><span class="pre">REST</span></code> APIs. This allows applications written in any language (C#, JavaScript, Python, C++, etc.) to easily integrate with Ryzen AI LLMs.</p>
 <p>Server interfaces are used across the LLM ecosystem because they allow for no-code plug-and-play between the higher level of the application stack (GUIs, agents, RAG, etc.) with the LLM and hardware that have been abstracted by the server.</p>
-<p>For example, open source projects such as <a class="reference external" href="https://github.com/open-webui/open-webui">Open WebUI</a> and <a class="reference external" href="https://github.com/EleutherAI/lm-evaluation-harness">LM Eval</a> have out-of-box support for connecting to a variety of server interfaces, which allow users to quickly start working with LLMs in a GUI or run a variety of validation tasks, respectively.</p>
+<p>For example, open source projects such as <a class="reference external" href="#open-webui-demo">Open WebUI</a> have out-of-box support for connecting to a variety of server interfaces, which in turn allows users to quickly start working with LLMs in a GUI.</p>
 <section id="server-setup">
 <h2>Server Setup<a class="headerlink" href="#server-setup" title="Permalink to this heading">#</a></h2>
 <p>The fastest way to set up the server is with the <code class="docutils literal notranslate"><span class="pre">lemonade</span> <span class="pre">server</span> <span class="pre">installer</span></code>.</p>
@@ -392,29 +395,24 @@ document.write(`
 <p>The <a class="reference external" href="https://platform.openai.com/docs/api-reference/streaming">OpenAI API documentation</a> also has code examples for integrating streaming completions into an application.</p>
 <section id="open-webui-demo">
 <h3>Open WebUI Demo<a class="headerlink" href="#open-webui-demo" title="Permalink to this heading">#</a></h3>
-<p>The best way to experience the <code class="docutils literal notranslate"><span class="pre">lemonade</span></code> server is to try it with an OpenAI-compatible application, like Open WebUI.</p>
-<p>Instructions:</p>
+<p>The best way to experience the lemonade server is to try it with an OpenAI-compatible application, like Open WebUI.</p>
+<section id="instructions">
+<h4>Instructions:<a class="headerlink" href="#instructions" title="Permalink to this heading">#</a></h4>
+<p>In a terminal, install Open WebUI using the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>webui<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+pip<span class="w"> </span>install<span class="w"> </span>open-webui
+open-webui<span class="w"> </span>serve
+</pre></div>
+</div>
+<p>To launch the UI, open a browser and navigate to <cite>http://localhost:8080/</cite>.</p>
+<p>In the top-right corner of the UI, click the profile icon and then:</p>
 <ol class="arabic simple">
-<li><p>In a terminal, install Open WebUI:</p></li>
+<li><p>Go to Settings -&gt; Connections.</p></li>
+<li><p>Click the ‘+’ button to Add Connection.</p></li>
+<li><p>In the URL field, enter <a class="reference external" href="http://localhost:8000/api/v0">http://localhost:8000/api/v0</a>, and in the key field put “-”, then press save.</p></li>
 </ol>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>conda create -n webui python=3.11</p></li>
-<li><p>pip install open-webui</p></li>
-<li><p>open-webui serve</p></li>
-</ol>
-</div></blockquote>
-<ol class="arabic simple" start="2">
-<li><p>Open <a class="reference external" href="http://localhost:8080/">http://localhost:8080/</a> in your browser to launch the UI.</p></li>
-<li><p>In the UI:</p></li>
-</ol>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>Go to <code class="docutils literal notranslate"><span class="pre">Settings</span> <span class="pre">-&gt;</span> <span class="pre">Connections</span> <span class="pre">-&gt;</span> <span class="pre">Add</span> <span class="pre">Connection</span></code></p></li>
-<li><p>Set <a class="reference external" href="http://localhost:8000/api/v0">http://localhost:8000/api/v0</a> as the URL, “-” as the key, and press save.</p></li>
-</ol>
-</div></blockquote>
-<p>Done! You are now able to run Open WebUI with Hybrid models. Feel free to choose any of the available “-Hybrid” models on the model selection menu.</p>
+<p>Done! You are now able to run Open WebUI with Hybrid models. Feel free to choose any of the available “-Hybrid” models in the model selection menu.</p>
+</section>
 </section>
 </section>
 <section id="next-steps">
@@ -473,7 +471,10 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#server-setup">Server Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#server-usage">Server Usage</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-webui-demo">Open WebUI Demo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-webui-demo">Open WebUI Demo</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions">Instructions:</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next Steps</a></li>
