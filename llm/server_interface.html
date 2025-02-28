@@ -379,7 +379,7 @@ document.write(`
 <li><p>Ensure that NPU MCDM driver (Version:32.0.203.237 or 32.0.203.240) is correctly installed by opening <code class="docutils literal notranslate"><span class="pre">Device</span> <span class="pre">Manager</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Neural</span> <span class="pre">processors</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">NPU</span> <span class="pre">Compute</span> <span class="pre">Accelerator</span> <span class="pre">Device</span></code>.</p></li>
 </ul>
 </div></blockquote>
-<ol class="arabic simple">
+<ol class="arabic simple" start="2">
 <li><p>Download and install <code class="docutils literal notranslate"><span class="pre">Lemonade_Server_Installer.exe</span></code> from the <a class="reference external" href="https://github.com/onnx/turnkeyml/releases">latest TurnkeyML release</a>.</p></li>
 <li><p>Launch the server by double-clicking the <code class="docutils literal notranslate"><span class="pre">lemonade_server</span></code> shortcut added to your desktop.</p></li>
 </ol>
@@ -398,13 +398,14 @@ document.write(`
 <p>The best way to experience the lemonade server is to try it with an OpenAI-compatible application, like Open WebUI.</p>
 <section id="instructions">
 <h4>Instructions:<a class="headerlink" href="#instructions" title="Permalink to this heading">#</a></h4>
+<p>First, launch the <code class="docutils literal notranslate"><span class="pre">lemonade_server</span></code> (see: <a class="reference external" href="#server-setup">server setup</a>).</p>
 <p>In a terminal, install Open WebUI using the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>webui<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
 pip<span class="w"> </span>install<span class="w"> </span>open-webui
 open-webui<span class="w"> </span>serve
 </pre></div>
 </div>
-<p>To launch the UI, open a browser and navigate to <cite>http://localhost:8080/</cite>.</p>
+<p>To launch the UI, open a browser and navigate to <a class="reference external" href="http://localhost:8080/">http://localhost:8080/</a>.</p>
 <p>In the top-right corner of the UI, click the profile icon and then:</p>
 <ol class="arabic simple">
 <li><p>Go to Settings -&gt; Connections.</p></li>
