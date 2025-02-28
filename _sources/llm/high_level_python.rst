@@ -22,9 +22,19 @@ System-level pre-requisites
 
 You only need to do this once per computer:
 
-#. Make sure your system has the Ryzen AI 1.3 driver installed: :ref:`install-npu-drivers`.
-#. `Download and install miniconda for Windows <https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe>`_.
-#. Launch a terminal and call ``conda init``.
+1. Make sure your system has the Ryzen AI 1.3 driver installed:
+
+  - Download the NPU driver installation package :download:`NPU Driver <https://account.amd.com/en/forms/downloads/ryzen-ai-software-platform-xef.html?filename=NPU_RAI1.3.zip>`
+
+  - Install the NPU drivers by following these steps:
+
+    - Extract the downloaded ``NPU_RAI1.3.zip`` zip file.
+    - Open a terminal in administrator mode and execute the ``.\npu_sw_installer.exe`` exe file.
+
+  - Ensure that NPU MCDM driver (Version:32.0.203.237 or 32.0.203.240) is correctly installed by opening ``Device Manager`` -> ``Neural processors`` -> ``NPU Compute Accelerator Device``.
+
+2. `Download and install miniconda for Windows <https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe>`_.
+3. Launch a terminal and call ``conda init``.
 
 *****************
 Environment Setup
@@ -51,7 +61,7 @@ Run this command in a terminal that has your environment activated:
 
     lemonade -i amd/Llama-3.2-1B-Instruct-awq-g128-int4-asym-fp16-onnx-hybrid oga-load --device hybrid --dtype int4 llm-prompt --max-new-tokens 64 -p PROMPT
 
-Each example linked in the :ref:`supported-llms` table also has `example commands <https://gitenterprise.xilinx.com/AIG-DAT/ryzenai-llm/blob/main/example/llm/hybrid/Llama_3_2_1B_Instruct.md#validation>`_ for validating the speed and accuracy of each model.
+Each example linked in the :ref:`supported-llms` table also has `example commands <https://github.com/amd/RyzenAI-SW/blob/main/example/llm/hybrid/Llama_3_2_1B_Instruct.md#validation>`_ for validating the speed and accuracy of each model.
 
 **********
 Python API
@@ -71,13 +81,13 @@ You can also run this code to try out the high-level ``lemonade`` API in a Pytho
 
   print(tokenizer.decode(response[0]))
 
-Each example linked in the :ref:`supported-llms` table also has an `example script <https://gitenterprise.xilinx.com/AIG-DAT/ryzenai-llm/blob/main/example/llm/hybrid/Llama_3_2_1B_Instruct.md#streaming>`_ for streaming the text output of the LLM.
+Each example linked in the :ref:`supported-llms` table also has an `example script <https://github.com/amd/RyzenAI-SW/blob/main/example/llm/hybrid/Llama_3_2_1B_Instruct.md#streaming>`_ for streaming the text output of the LLM.
 
 **********
 Next Steps
 **********
 
-From here, you can check out `an example <https://gitenterprise.xilinx.com/AIG-DAT/ryzenai-llm/blob/main/example/llm/hybrid/Llama_3_2_1B_Instruct.md>`_ or any of the other :ref:`supported-llms`. 
+From here, you can check out `an example <https://github.com/amd/RyzenAI-SW/blob/main/example/llm/hybrid/Llama_3_2_1B_Instruct.md>`_ or any of the other :ref:`supported-llms`. 
 
 The examples pages also provide code for: 
 
